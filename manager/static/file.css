@@ -418,14 +418,15 @@ li svg{
     align-items: center;
 }
 .control form{
+    box-sizing: border-box;
     padding: 0 10px;
 }
-@media(min-width: 530px){
+@media(min-width: 630px){
     .control{
         display: flex;
     }
 }
-@media(max-width: 529px){
+@media(max-width: 629px){
     .ctrl_tool{
         justify-content: center;
     }
@@ -587,7 +588,7 @@ li svg{
 .selecting p{
     margin: 0;
 }
-@media(max-width: 529px){
+@media(max-width: 629px){
     form{
         width: 100%;
         justify-content: center;
