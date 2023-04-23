@@ -195,24 +195,25 @@ $('li').click(function() {
     // 選択がないとき
     if(href.length === 0){
         copy.style.cursor = 'not-allowed';
+        cut.style.cursor = 'not-allowed';
         del.style.cursor = 'not-allowed';
         edit.style.cursor = 'not-allowed';
-        rnm.style.cursor = 'not-allowed';
         copysvg.style.fill = '#a9a9a9';
+        cutsvg.style.fill = '#a9a9a9';
         delsvg.style.fill = '#a9a9a9';
         editsvg.style.fill = '#a9a9a9';
-        rnmsvg.style.fill = '#a9a9a9';
         del.setAttribute('onclick', '');
         copy.setAttribute('onclick', '');
         cut.setAttribute('onclick', '');
         edit.setAttribute('onclick', '');
-        rnm.setAttribute('onclick', '');
         $('#selecting').removeClass('hidden');
 
     // 選択があるとき
     }else{
         copy.style.cursor = 'pointer';
+        cut.style.cursor = 'pointer';
         del.style.cursor = 'pointer';
+        edit.style.cursor = 'pointer';
         copysvg.style.fill = '#123767';
         cutsvg.style.fill = '#123767';
         delsvg.style.fill = '#123767';
