@@ -8,6 +8,7 @@ cd BattleConsole
 export FLASK_APP=manager
 flask run
 ```
+また、必要に応じてライブラリを追加してください。
 
 ## settings.ymlの設定
 settings.yml
