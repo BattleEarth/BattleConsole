@@ -325,8 +325,8 @@ def file_edit():
 
             # ファイル名を取得し、テキストファイルでなければfioに返す
             file_name = Path(request.args.get("p")).name
-            if file_name.endswith('.jar' or '.gz' or '.png' or '.jpg' or '.jpeg' or '.gif' or '.webp' or
-                                  '.mp4' or '.mov' or '.mp3' or '.m4a' or '.wav'):
+            if file_name.endswith(('.jar', '.gz', '.png', '.jpg', '.jpeg', '.gif', '.webp',
+                                  '.mp4', '.mov', '.mp3', '.m4a', '.wav')):
                 return redirect(f'./fio?p={path}')
 
             # ファイルの絶対パスを取得
