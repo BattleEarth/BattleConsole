@@ -1,5 +1,5 @@
 # BattleConsole
-💻Minecraftサーバーを管理する
+💻Minecraftサーバーを管理する<br />
 [Sample](http://dev.mydd.jp:5000)
 
 ## 使い方(flaskの場合)
