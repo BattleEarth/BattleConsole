@@ -77,14 +77,14 @@
                 <h1 id="info_success_h1"></h1>
             </div>
             <div class="info_dir" id="info_error">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"> <!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --> <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" style="fill:#d40000"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" style="fill:#d40000"/></svg>
                 <h1 id="info_error_h1"></h1>
             </div>
         </div>
         <div class="filedir">
             <h1>~ /{{cwd.lstrip(".")}}</h1>
             <div class="control">
-                <form action="./fio?d={{cwd}}" method="POST" enctype="multipart/form-data">
+                <form action="./fio?d={{cwd}}" method="POST" enctype="multipart/form-data" name="form">
                     <label><input type="file" name="file" id="file">アップロード</label>
                 </form>
                 <div class="ctrl_tool">
@@ -118,7 +118,7 @@
                         {% elif child.name.endswith((".zip", ".gz")) %}
                             <!--Compress-->
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" width="24px" height="24px"><path fill="#FFB900" d="M10 5 8.586 3.586A2 2 0 0 0 7.172 3H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1h-8z"/><path fill="#FFD75E" d="M10 5 8.586 6.414A2 2 0 0 1 7.172 7H1v9a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1h-8z"/><path fill="url(#a)" d="M10 5 8.586 6.414A2 2 0 0 1 7.172 7H1v9a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1h-8z"/><path fill="#E67628" d="M2 16.5c-.373 0-.71-.142-.973-.367A.989.989 0 0 0 2 17h16c.505 0 .905-.38.973-.867-.262.226-.6.367-.973.367H2z"/><path fill="#fff" d="M8.836 6.914 10.75 5H10L8.586 6.414A2 2 0 0 1 7.172 7H1v.5h6.422a2 2 0 0 0 1.414-.586z" opacity=".4"/><path fill="#BF5712" fill-rule="evenodd" d="M2.25 10h6.5a.25.25 0 0 1 .25.25v3.5a.25.25 0 0 1-.25.25h-6.5a.25.25 0 0 1-.25-.25V13h1v-2H2v-.75a.25.25 0 0 1 .25-.25zM6 13h2v-2H6v2zm4.75 0h-.5a.25.25 0 0 1-.25-.25v-1.5a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v1.5a.25.25 0 0 1-.25.25zm1.5 0h.5a.25.25 0 0 0 .25-.25v-1.5a.25.25 0 0 0-.25-.25h-.5a.25.25 0 0 0-.25.25v1.5c0 .138.112.25.25.25zm2.5 0h-.5a.25.25 0 0 1-.25-.25v-1.5a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v1.5a.25.25 0 0 1-.25.25zm1.5 0h.5a.25.25 0 0 0 .25-.25v-1.5a.25.25 0 0 0-.25-.25h-.5a.25.25 0 0 0-.25.25v1.5c0 .138.112.25.25.25zm2.5 0h-.5a.25.25 0 0 1-.25-.25v-1.5a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v1.5a.25.25 0 0 1-.25.25zM1 13h.75a.25.25 0 0 0 .25-.25v-1.5a.25.25 0 0 0-.25-.25H1v2z" clip-rule="evenodd"/><defs><linearGradient id="a" x1="1" x2="1" y1="5" y2="17" gradientUnits="userSpaceOnUse"><stop stop-color="#fff" stop-opacity=".01"/><stop offset=".999" stop-color="#FFD75E" stop-opacity=".3"/></linearGradient></defs></svg>
-                        {% elif child.name.endswith((".json", ".yml", ".js", ".css")) %}
+                        {% elif child.name.endswith((".json", ".yml", ".css")) %}
                             <!--Codes-->
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" width="24px" height="24px"><path fill="#fff" d="M16 7h-2.5c-.827 0-1.5-.673-1.5-1.5V2H4v16h12V7z"/><path fill="#fff" d="M16 6v-.293l-3-3V5.5c0 .275.225.5.5.5H16z"/><path fill="#605E5C" fill-rule="evenodd" d="M16.707 5 13 1.293A1 1 0 0 0 12.293 1H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5.707A1 1 0 0 0 16.707 5zM16 5.707V6h-2.5a.501.501 0 0 1-.5-.5V2.707l3 3zM4 2.2v15.6c0 .11.09.2.2.2h11.6a.2.2 0 0 0 .2-.2V7h-2.5A1.5 1.5 0 0 1 12 5.5V2H4.2a.2.2 0 0 0-.2.2z" clip-rule="evenodd" opacity=".64"/><path fill="#C8C6C4" d="M14.5 16h-9a.5.5 0 0 1 0-1h9a.5.5 0 0 1 0 1z"/><path fill="#69AFE5" d="M13.053 12.776a.5.5 0 1 0 .894.448l-.894-.448zM14.5 11l.447.224a.5.5 0 0 0 0-.448L14.5 11zm-.553-2.224a.5.5 0 1 0-.894.448l.894-.448zm-7 .448a.5.5 0 1 0-.894-.448l.894.448zM5.5 11l-.447-.224a.5.5 0 0 0 0 .448L5.5 11zm.553 2.224a.5.5 0 1 0 .894-.448l-.894.448zm7.894 0 1-2-.894-.448-1 2 .894.448zm1-2.448-1-2-.894.448 1 2 .894-.448zm-8.894-2-1 2 .894.448 1-2-.894-.448zm-1 2.448 1 2 .894-.448-1-2-.894.448z"/><path stroke="#69AFE5" stroke-linecap="round" d="m11 8-2 6"/></svg>
                         {% elif child.name.endswith((".html", ".htm")) %}
@@ -145,6 +145,8 @@
                         {% elif child.name.endswith((".py", ".pyi")) %}
                             <!--Python-->
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" width="24px" height="24px"><path fill="#fff" d="M16 7h-2.5c-.827 0-1.5-.673-1.5-1.5V2H4v16h12V7z" id="path3580" /><path fill="#605E5C" fill-rule="evenodd" d="M16.707 5 13 1.293A1 1 0 0 0 12.293 1H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5.707A1 1 0 0 0 16.707 5zM16 5.707V6h-2.5a.501.501 0 0 1-.5-.5V2.707l3 3zM4 2.2v15.6c0 .11.09.2.2.2h11.6a.2.2 0 0 0 .2-.2V7h-2.5A1.5 1.5 0 0 1 12 5.5V2H4.2a.2.2 0 0 0-.2.2z" clip-rule="evenodd" opacity=".64" id="path3584" /><g id="_x32_67-python" transform="matrix(0.02130489,0,0,0.02130489,4.5459435,6.2883334)"><g id="g4080"><path d="m 194.005,240.252 h 105.054 c 29.216,0 52.529,-24.101 52.529,-53.414 V 86.603 c 0,-28.525 -24.002,-49.871 -52.529,-54.691 -35.214,-5.804 -73.478,-5.509 -105.054,0.097 -44.462,7.87 -52.527,24.298 -52.527,54.693 v 21.453 H 246.63 v 31.959 H 102.033 c -30.591,0 -57.349,18.394 -65.709,53.315 -9.64,40.035 -10.033,65.02 0,106.826 7.476,31.085 25.28,53.314 55.872,53.314 h 36.101 v -48.001 c -0.001,-34.723 30.001,-65.316 65.708,-65.316 z" style="fill:#347ab4" id="path4072" /><path d="M 474.975,209.372 C 467.4,178.977 453.04,156.057 422.448,156.057 h -39.443 v 46.626 c 0,36.199 -30.692,66.691 -65.71,66.691 H 212.24 c -28.724,0 -52.528,24.594 -52.528,53.414 v 100.138 c 0,28.524 24.788,45.246 52.528,53.413 33.247,9.737 65.215,11.509 105.054,0 26.462,-7.675 52.529,-23.116 52.529,-53.413 V 401.929 H 264.867 v -32.417 h 157.58 c 30.593,0 41.904,-21.346 52.527,-53.314 11.018,-32.954 10.527,-64.628 0.001,-106.826 z" style="fill:#ffca1d" id="path4074" /><path d="m 187.415,89.594 c -10.479,0 -18.975,-8.591 -18.975,-19.164 0.094,-10.668 8.496,-19.259 18.975,-19.259 10.385,0 18.976,8.685 18.976,19.259 -0.001,10.573 -8.497,19.164 -18.976,19.164 z" style="fill:#ffffff" id="path4076" /><path d="m 314.908,460.076 c -10.479,0 -18.976,-8.591 -18.976,-19.164 0.095,-10.668 8.496,-19.259 18.976,-19.259 10.385,0 18.976,8.685 18.976,19.259 0,10.573 -8.496,19.164 -18.976,19.164 z" style="fill:#ffffff" id="path4078" /></g></g></svg>
+                        {% elif child.name.endswith((".js")) %}
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" width="24px" height="24px"><path fill="#fff" d="M16 6v-.293l-3-3V5.5c0 .275.225.5.5.5H16z" id="path4"/><path fill="#605E5C" fill-rule="evenodd" d="M16.707 5 13 1.293A1 1 0 0 0 12.293 1H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5.707A1 1 0 0 0 16.707 5zM16 5.707V6h-2.5a.501.501 0 0 1-.5-.5V2.707l3 3zM4 2.2v15.6c0 .11.09.2.2.2h11.6a.2.2 0 0 0 .2-.2V7h-2.5A1.5 1.5 0 0 1 12 5.5V2H4.2a.2.2 0 0 0-.2.2z" clip-rule="evenodd" opacity=".64" id="path6" /><rect id="background" x="5.2579031" y="7.7701116" width="9.2770176" height="9.2770176" fill="#f7df1e" style="stroke-width:0.0147254" /><path id="j" d="m 7.7763253,15.337964 0.7099503,-0.42965 c 0.1369648,0.24284 0.26156,0.448297 0.5604123,0.448297 0.286465,0 0.4670722,-0.112058 0.4670722,-0.547934 V 11.84445 H 10.38556 v 2.976561 c 0,0.902963 -0.5292861,1.313966 -1.3015062,1.313966 -0.6974149,0 -1.1022352,-0.361194 -1.3077285,-0.797086" style="stroke-width:0.0147254" /><path id="s" d="m 10.859093,15.24455 0.709858,-0.411005 c 0.186865,0.305166 0.429724,0.529343 0.859393,0.529343 0.361234,0 0.591576,-0.180604 0.591576,-0.429707 0,-0.298908 -0.236619,-0.404783 -0.63518,-0.579096 l -0.2179,-0.09347 c -0.628997,-0.267728 -1.046242,-0.604002 -1.046242,-1.313914 0,-0.653864 0.498179,-1.152081 1.276621,-1.152081 0.554227,0 0.952771,0.193069 1.239199,0.697488 l -0.678786,0.435891 c -0.149463,-0.267744 -0.311332,-0.373602 -0.560413,-0.373602 -0.255321,0 -0.417245,0.161907 -0.417245,0.373602 0,0.261561 0.161924,0.367436 0.535527,0.529361 l 0.217937,0.09339 c 0.741056,0.317609 1.158301,0.641402 1.158301,1.369961 0,0.784681 -0.616499,1.214331 -1.444712,1.214331 -0.809548,0 -1.33265,-0.386062 -1.587934,-0.890501" style="stroke-width:0.0147254" /><path id="j-2" d="m 7.1637982,15.537596 0.7849515,-0.47504 c 0.1514338,0.268494 0.2891919,0.495657 0.6196167,0.495657 0.3167276,0 0.5164152,-0.123895 0.5164152,-0.605819 v -3.277379 h 0.9639004 v 3.291014 c 0,0.998356 -0.5852029,1.452781 -1.4390028,1.452781 -0.7710914,0 -1.2186786,-0.399355 -1.445881,-0.881295" style="fill:#000000;stroke-width:0.016281" /><path id="s-3" d="m 10.57224,15.434313 0.784849,-0.454424 c 0.206607,0.337404 0.475123,0.585263 0.950184,0.585263 0.399394,0 0.654071,-0.199683 0.654071,-0.475102 0,-0.330486 -0.261615,-0.447546 -0.702283,-0.640273 L 12.018142,14.34643 c -0.695447,-0.296011 -1.156771,-0.667809 -1.156771,-1.452719 0,-0.722941 0.550809,-1.273791 1.411489,-1.273791 0.612778,0 1.053425,0.213465 1.370112,0.771173 l -0.750495,0.481939 c -0.165254,-0.296029 -0.344223,-0.41307 -0.619617,-0.41307 -0.282294,0 -0.461325,0.179011 -0.461325,0.41307 0,0.289195 0.179031,0.406254 0.592102,0.585285 l 0.240959,0.103264 c 0.819345,0.351163 1.28067,0.709163 1.28067,1.514689 0,0.867578 -0.681627,1.342619 -1.597336,1.342619 -0.895072,0 -1.473437,-0.42685 -1.75569,-0.984578" style="fill:#000000;stroke-width:0.016281" /></svg>
                         {% else %}
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" width="24px" height="24px"><path fill="#fff" d="M16 7h-2.5c-.827 0-1.5-.673-1.5-1.5V2H4v16h12V7z"/><path fill="#fff" d="M16 6v-.293l-3-3V5.5c0 .275.225.5.5.5H16z"/><path fill="#605E5C" fill-rule="evenodd" d="M16.707 5 13 1.293A1 1 0 0 0 12.293 1H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5.707A1 1 0 0 0 16.707 5zM16 5.707V6h-2.5a.501.501 0 0 1-.5-.5V2.707l3 3zM4 2.2v15.6c0 .11.09.2.2.2h11.6a.2.2 0 0 0 .2-.2V7h-2.5A1.5 1.5 0 0 1 12 5.5V2H4.2a.2.2 0 0 0-.2.2z" clip-rule="evenodd" opacity=".64"/></svg>
                         {% endif %}
@@ -163,8 +165,11 @@
 </section>
 <div class="confirm" id="confirm" onclick="cancel()">
     <div class="confirm_box" id="delete" onclick="inside_cancel()">
+        <div class="confirm_cross">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" onclick="cancel()"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
+        </div>
         <div class="confirm_svgs">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="confirm_svg"> <!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --> <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" id="path2" style="fill:#d40000" /> </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="confirm_svg"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" id="path2" style="fill:#d40000" /></svg>
         </div>
         <h2 style="text-align: center">このファイルを完全に<br class="br">削除しますか？</h2>
         <p>ファイルを完全に削除すると永久にアクセスできなくなります。</p>
@@ -175,6 +180,9 @@
         </div>
     </div>
     <div class="confirm_box" id="rename" onclick="inside_cancel()">
+        <div class="confirm_cross">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" onclick="cancel()"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
+        </div>
         <div class="confirm_svgs">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="confirm_svg"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"style="fill:#0055d4" /></svg>
         </div>
@@ -188,6 +196,17 @@
             </div>
         </div>
     </div>
+</div>
+<!--
+<div class="upload" id="dropArea">
+    <div class="upload_box">
+        <div class="upload_text">
+            <h1>アップロード</h1>
+            <a>ドロップしてファイルをアップロード</a>
+        </div>
+    </div>
+-->
+
 </div>
 <script src="{{ url_for('static', filename='file.js') }}"></script>
 </body>
