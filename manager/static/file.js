@@ -246,19 +246,19 @@ $('li').click(function() {
 });
 
 document.addEventListener('keydown', function(event) {
-    if (event.ctrlKey && event.key === 'c') {
+    if (event.ctrlKey && event.key === 'c' || event.metaKey && event.key === 'c') {
         if(href.length !== 0){
             copy_file();
         }
     }
 
-    if (event.ctrlKey && event.key === 'x') {
+    if (event.ctrlKey && event.key === 'x' || event.metaKey && event.key === 'x') {
         if(href.length !== 0){
             cut_file();
         }
     }
 
-    if (event.ctrlKey && event.key === 'v') {
+    if (event.ctrlKey && event.key === 'v' || event.metaKey && event.key === 'v') {
         if(source != null || cutsource != null){
             paste_file();
         }
