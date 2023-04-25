@@ -106,7 +106,7 @@ async function inside_cancel(){
     inside = false;
 }
 // 削除キャンセル
-async function cancel(t){
+async function cancel(){
     if (inside === false){
         document.querySelector('.active').classList.toggle('active');
         await sleep(100);
@@ -155,7 +155,7 @@ if(source != null || cutsource != null){
         CopySource = '&k=' + cutsource;
         for (let i of cutsource.split(',')){
             try{
-                document.querySelector(`li[dir="${i}"]`).querySelector('svg').style.fill = '#969696';
+                document.querySelector(`li[dir="${i}"]`).querySelector('svg').style.opacity = '0.3';
             }catch (e){
                 continue
             }
@@ -252,8 +252,14 @@ document.addEventListener('keydown', function(event) {
         }
     }
 
+    if (event.ctrlKey && event.key === 'x') {
+        if(href.length !== 0){
+            cut_file();
+        }
+    }
+
     if (event.ctrlKey && event.key === 'v') {
-        if(source != null){
+        if(source != null || cutsource != null){
             paste_file();
         }
     }
