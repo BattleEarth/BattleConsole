@@ -248,6 +248,33 @@ nav.globalMenuSp.active {
     font-weight: 400;
     width: 100%;
 }
+
+.filename{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+.filename svg{
+    margin: 0 5px 0 0;
+}
+.filename a{
+    box-sizing: border-box;
+    background-color: #e7e7e7;
+    color: #111111;
+    width: 130px;
+    padding: 5px 8px;
+    text-align: center;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+}
+.filename a:hover{
+    background-color: #c4c4c4;
+}
+h1{
+    margin: 0;
+    width: calc(100% - 35px);
+}
+
 .editor{
     height: 100%;
     width: 100%;
@@ -279,10 +306,12 @@ nav.globalMenuSp.active {
     outline: none;
     color: #fff;
     font-family: "Lato", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;
+    font-weight: 700;
     font-size: 20px;
     border-radius: 5px;
     padding: 5px 15px;
     margin: 10px;
+    font-feature-settings: "palt";
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 }
@@ -296,10 +325,12 @@ nav.globalMenuSp.active {
     outline: none;
     color: #cf222e;
     font-family: "Lato", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;
+    font-weight: 400;
     font-size: 20px;
     border-radius: 5px;
     padding: 5px 15px;
     margin: 10px;
+    font-feature-settings: "palt";
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 }
@@ -368,6 +399,7 @@ html{
     height: 100%;
     font-family: "Lato", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;
     color: #111111;
+    font-feature-settings: "palt";
 }
 body{
     width: 100%;
