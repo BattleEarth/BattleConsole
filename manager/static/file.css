@@ -366,7 +366,7 @@ form p{
     font-weight: 300;
     margin: auto 20px;
 }
-input[type="file"] {
+.filedir input[type="file"] {
     display: none;
 }
 input[type="checkbox"]{
@@ -483,6 +483,22 @@ li svg{
 .confirm_box p{
     font-weight: 400;
 }
+.confirm_cross{
+    position: fixed;
+    text-align: right;
+    width: calc(100% - 40px);
+}
+.confirm_cross svg{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    fill: #3b3b3b;
+    padding: 4px;
+    border-radius: 100px;
+}
+.confirm_cross svg:hover{
+    background-color: #e5e5e5;
+}
 .confirm_svg{
     width: 100px;
     height: 100px;
@@ -538,6 +554,48 @@ li svg{
 }
 .rename_box:focus{
     border-bottom: 2px solid #1b6dd3;
+}
+.upload{
+    box-sizing: border-box;
+    position: fixed;
+    width: calc(100vw - 315px);
+    height: 100vh;
+    padding: 3%;
+    top: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.83);
+}
+.upload_box{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border: 8px #767e7e dashed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.upload_text{
+    display: block;
+    text-align: center;
+}
+.upload_text h1{
+    font-size: 45px;
+}
+.upload_text a{
+    font-weight: 400;
+    font-size: 20px;
+}
+@media(max-width: 999px) {
+    .upload {
+        width: 100vw;
+    }
+    .upload_text h1{
+        font-size: 35px;
+    }
+    .upload_text a{
+        font-weight: 400;
+        font-size: 15px;
+    }
 }
 @media(min-width:471px){.br{display: none}}
 #confirm{
@@ -596,6 +654,13 @@ li svg{
 }
 h2{
     margin: 0;
+}
+html{
+    width: 100%;
+    height: 100%;
+    font-family: "Lato", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;
+    color: #111111;
+    font-feature-settings: "palt";
 }
 body{
     width: 100%;
