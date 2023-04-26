@@ -268,11 +268,12 @@ nav.globalMenuSp.active {
     margin: 5px;
 }
 .info_dir svg{
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
+    margin: 10px;
 }
 .info_dir h1{
-    margin: 0 0 0 20px;
+    margin: 0 20px;
     font-size: 21px;
 }
 @media(max-width: 999px){
@@ -295,7 +296,7 @@ nav.globalMenuSp.active {
     .main li{
         width: calc(calc(100% / 4) - 40px);
     }
-    h1{
+    .filedir h1{
         box-sizing: border-box;
         width: 100%;
         font-size: 30px;
@@ -307,7 +308,7 @@ nav.globalMenuSp.active {
     .main li{
         width: calc(calc(100% / 3) - 30px);
     }
-    h1{
+    .filedir h1{
         box-sizing: border-box;
         width: 100%;
         font-size: 30px;
@@ -319,7 +320,7 @@ nav.globalMenuSp.active {
     .main li{
         width: calc(calc(100% / 2) - 24px);
     }
-    h1{
+    .filedir h1{
         box-sizing: border-box;
         width: 100%;
         font-size: 25px;
