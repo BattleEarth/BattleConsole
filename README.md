@@ -1,6 +1,6 @@
 # BattleConsole
+### [DEMO](http://dev.mydd.jp:5000)
 💻Minecraftサーバーを管理するWebアプリケーション<br />
-[Sample](http://dev.mydd.jp:5000)
 
 ## 使い方(flaskの場合)
 ```
