@@ -272,7 +272,7 @@ nav.globalMenuSp.active {
 }
 h1{
     margin: 0;
-    width: calc(100% - 35px);
+    width: calc(100% - 160px);
 }
 
 .editor{
@@ -350,6 +350,7 @@ textarea{
     outline: none;
     padding: 1rem;
     resize: none;
+    white-space: nowrap;
 }
 textarea::-webkit-scrollbar{
     width: 15px;
