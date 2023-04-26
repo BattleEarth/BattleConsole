@@ -2,7 +2,7 @@
 ### [DEMO](http://dev.mydd.jp:5000)
 💻Minecraftサーバーを管理するWebアプリケーション<br />
 
-## 使い方(flaskの場合)
+## 使い方(flaskの組み込みサーバーを使う場合)
 ```
 git clone git@github.com:BattleEarth/BattleConsole.git
 cd BattleConsole
